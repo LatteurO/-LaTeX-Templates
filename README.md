@@ -13,6 +13,7 @@ You will find
 
 - The `Templates` directory contains some useful templates that you could copy-past into your project
 - The `Packages` directory contains some useful packages that are based on other standard packages whose purpose is to save time when writing reports by simplifying the use of certain long commands that you might use often 
+- The 'Exemples' directory contains example of documents that use the packages
 
 ### Community
 
