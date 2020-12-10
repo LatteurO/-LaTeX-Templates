@@ -1,0 +1,29 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{quickimage}[2020/12/10 quick image package]
+
+\RequirePackage{imakeidx}
+\RequirePackage{xstring}
+\RequirePackage{xcolor}
+\RequirePackage{xifthen} %allows to use \ifthenelse
+\RequirePackage{xargs} % allows to manage optional arguments
+\RequirePackage{xkeyval}
+\RequirePackage[justification=centering]{caption}
+\RequirePackage{float} %allows H,h!,... in figure
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+
+\DeclareOption*{\PackageWarning{quickimage}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+\newcommandx{\singleimage}[4][1=0.8,4=]{
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=#1\textwidth]{#2}
+		\ifthenelse{\isempty{#3}}{}{
+			\caption{#3}		
+		}
+		\ifthenelse{\isempty{#4}}{}{
+			#4 %label
+		}
+	\end{figure}
+}

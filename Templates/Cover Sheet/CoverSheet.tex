@@ -1,0 +1,107 @@
+\documentclass{article} %mise en forme générale du document
+\usepackage[utf8]{inputenc} %utf8
+\usepackage{stmaryrd} %pour plus de sympbole mais moi je l'ai mis pour le beau parallele de 
+\usepackage[siunitx]{circuitikz} %pour faire des circuits en latex
+\usepackage{lmodern}
+\usepackage{graphicx,wrapfig,lipsum} %wrapfig, ...
+\usepackage{soul}
+\usepackage{amssymb}
+\usepackage[justification=centering]{caption} %caption (au milieu de la figure et retour à la ligne si dépasse figure
+
+\usepackage{graphicx}%permet de mettre des images, les réduire, les placer, les tourner [scale=....,angle=...]
+\usepackage{booktabs}%permet de faire des jolis tableaux
+\usepackage{multicol}%permet de faire des listes sur 2 colonnes
+\usepackage{multirow}%Permet de faire des lignes
+\usepackage{geometry}%changer les marges, footers, headers
+\usepackage{float} % permet de choisir mieux ou mettre les images avec[H],t,b,p,
+
+\usepackage{fancyhdr}%modifier les headers et footers
+\usepackage{chemist}%Pour la chimie
+\usepackage{titling}
+\usepackage{wrapfig}
+\usepackage{tikz}%plus de package
+
+\usepackage[bottom]{footmisc}% pour faire des footer
+\setlength{\headheight}{12.2pt}%mise en page header
+\setlength{\droptitle}{-2cm}%Positionne le titre sous le header
+\geometry{margin=1.6cm}%set les marges
+
+\numberwithin{equation}{section} % to get equation numbered by section
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} %pour faire des check mark
+
+\begin{document}
+\thispagestyle{fancy}
+
+\begin{titlepage}
+
+  \begin{sffamily}
+  
+  \begin{center}  
+        
+        \begin{figure}[h]
+            \begin{minipage}[c]{0.5\textwidth}
+            \flushleft
+            \includegraphics[scale=0.8]{logo_epl.jpg}
+            \end{minipage}%
+            \begin{minipage}[c]{0.5\textwidth}
+            \includegraphics[scale=0.37]{logo_ucl.jpg}
+            \flushright 
+            \end{minipage}
+        \end{figure}
+        
+\vfill
+
+        %%% TITRE
+        \textsc{\LARGE Main topic of the report}\\[0.3cm]
+        \rule{16cm}{1pt}
+        \medskip
+        \\
+        { \huge \rm \bf Title of the report \\[0.2cm] }
+        \rule{16cm}{1pt}
+        \\
+    
+        \vspace{1cm}
+    
+        \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{logo_micosoft.png}
+        \end{figure}
+
+\vspace{1cm}
+\large   
+    
+%%% Lastname & Firstname& NOMA \\ 
+    \begin{table}[ht!]
+        \centering
+        \large
+             
+            \begin{tabular}{lccr}
+               
+                \Large{\textsc{Lastname}} & \Large{Firstname} & info & e-mail\\
+                \Large{\textsc{Lastname}} & \Large{Firstname} & info & e-mail\\
+                \Large{\textsc{Lastname}} & \Large{Firstname} & info & e-mail\\
+                \Large{\textsc{Lastname}} & \Large{Firstname} & info & e-mail\\
+                \Large{\textsc{Lastname}} & \Large{Firstname} & info & e-mail\\
+                \Large{\textsc{Lastname}} & \Large{Firstname} & info & e-mail\\
+
+            \end{tabular}
+    \end{table}
+\vspace{1cm}
+    \begin{center}
+        {\rm \today}
+    \end{center}
+    
+    
+\vfill
+
+\begin{tabular}{c c c}
+    \textrm{\textbf{Professor :}} & \textrm{\textbf{Team Leader :}} &\textrm{\textbf{Team Manager :}}\\
+    \textrm{firstname \textsc{lastname}} & \textrm{firstname \textsc{lastname}} & \textrm{firstname \textsc{lastname}}
+\end{tabular}
+    
+\end{center}
+\end{sffamily}
+\end{titlepage}
+
+
+\end{document}
