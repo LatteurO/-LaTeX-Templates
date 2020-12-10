@@ -18,3 +18,4 @@ You will find
 ### Community
 
 If you have templates, packages or classes that you use a lot, don't hesitate to submit them in order to embellish this git and share it with others.
+testedit
