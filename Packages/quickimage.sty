@@ -15,6 +15,7 @@
 \DeclareOption*{\PackageWarning{quickimage}{Unknown ‘\CurrentOption’}}
 \ProcessOptions\relax
 
+%arg1=widthRatio arg2=file2 arg3=caption1 [arg4]=additional1
 \newcommandx{\singleimage}[4][1=0.8,4=]{
 	\begin{figure}[h!]
 		\centering
@@ -27,3 +28,116 @@
 		}
 	\end{figure}
 }
+
+%arg1=file1 arg2=caption1 [arg3]=additional1 arg4=file2  arg5=caption2 [arg6]additional2	
+\newcommandx{\doubleimage}[6][3=,6=]
+{
+	\smallbreak
+	\begin{minipage}[c]{0.48\textwidth}
+		\flushleft
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=.95\textwidth]{#1}
+            \caption{#2}
+			\ifthenelse{\isempty{#3}}{}{
+				#3
+			}
+        \end{figure}
+    \end{minipage}%
+    \begin{minipage}[c]{0.48\textwidth}
+       \begin{figure}[H]
+            \centering
+            \includegraphics[width=.95\textwidth]{#4}
+            
+			\caption{#5}
+			
+			\ifthenelse{\isempty{#6}}{}{
+				#6
+			}            
+            
+            \label{fig:MockUp_signInModal}
+        \end{figure}
+    \end{minipage}
+}
+
+
+\newcommandx{\doubleimagecaption}[6][2=,4=,6=]
+{
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.48\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{#1}
+         \ifthenelse{\isempty{#2}}{}{
+				\caption{#2}
+		 }
+         \label{fig:y equals x}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.48\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{#3}
+         \ifthenelse{\isempty{#4}}{}{
+				\caption{#4}
+		 }
+         \label{fig:three sin x}
+     \end{subfigure}
+        \caption{#5}
+     \ifthenelse{\isempty{#6}}{}{
+		#6
+	} 
+\end{figure}
+}
+
+
+\newcommandx{\doubleminipage}[4][1=0.48,2=0.48]
+{	\smallbreak
+	\begin{minipage}[c]{#1\textwidth}
+        #3
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{#2\textwidth} 
+    	     
+       #4
+    \end{minipage}
+}
+
+
+
+\newcommandx{\imageleft}[6][1=0.48,2=0.48,5=]
+{
+	\smallbreak
+	\doubleminipage[#1][#2]{
+		\begin{figure}[H]
+            \centering
+            \includegraphics[width=.95\textwidth]{#3}
+			\caption{#4}
+			\ifthenelse{\isempty{#6}}{}{
+				#5
+			}
+        \end{figure}
+	}{#6}
+}
+
+%[arg1]=ratio left [arg2]=ratio right	arg3=image file arg4=caption [arg5]=additional image arg6=txt
+\newcommandx{\imageright}[6][1=0.48,2=0.48,5=]
+{
+	\smallbreak
+	\doubleminipage[#1][#2]{
+		#6
+	}{
+		\begin{figure}[H]
+            \centering
+            \includegraphics[width=.95\textwidth]{#3}
+			\caption{#4}
+			\ifthenelse{\isempty{#6}}{}{
+				#5
+			}	 
+        \end{figure}	
+	}
+}
+
+
+
+
+
