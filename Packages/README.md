@@ -18,8 +18,10 @@ Arguments between "[" and "]" are optional
       - `\doubleimagecaption{file1 source}[caption1]{file2 source}[caption 2]{caption for both images}[additional info for both images]`
       - `\doubleminipage[ratio left minipage][ratio right minipage]{left minipage content}{right minipage content}`
         If you decide to use ratio left or right argument, you have to use both of them.
+        If you want the text in a minipage to be on top of it, you must replace the 'c' argument by 't' in the \minipage
       - `\imageleft[ratio left minpage][ration right minipage]{file source}{caption}[additional info]{right minipage content}`
         If you decide to use ratio left or right argument, you have to use both of them.
       - `\imageright[ratio left minpage][ration right minipage]{file source}{caption}[additional info]{leftminipage content}`
+      - `\wrapfigure[ration textwidth]{l/r}{file source}{caption}[additional info]`
    2. Environements
 

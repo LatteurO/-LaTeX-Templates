@@ -10,6 +10,7 @@
 \RequirePackage[justification=centering]{caption}
 \RequirePackage{float} %allows H,h!,... in figure
 \RequirePackage{caption}
+\RequirePackage{wrapfig}
 \RequirePackage{subcaption}
 
 \DeclareOption*{\PackageWarning{quickimage}{Unknown ‘\CurrentOption’}}
@@ -92,6 +93,7 @@
 
 \newcommandx{\doubleminipage}[4][1=0.48,2=0.48]
 {	\smallbreak
+	% use t instead of c to put the text of each minipage on top of the minipage
 	\begin{minipage}[c]{#1\textwidth}
         #3
     \end{minipage}
@@ -116,7 +118,7 @@
 				#5
 			}
         \end{figure}
-	}{#6}
+	}{#6 \vfill test}
 }
 
 %[arg1]=ratio left [arg2]=ratio right	arg3=image file arg4=caption [arg5]=additional image arg6=txt
@@ -125,6 +127,7 @@
 	\smallbreak
 	\doubleminipage[#1][#2]{
 		#6
+
 	}{
 		\begin{figure}[H]
             \centering
@@ -135,6 +138,21 @@
 			}	 
         \end{figure}	
 	}
+}
+
+%[arg1]=ration textwidth arg2=l or r	arg3=file source	arg4=caption	[arg5] additional info
+\newcommandx{\wrapimage}[5][1=0.5,5=]
+{
+	\begin{wrapfigure}{#2}{#1\textwidth} 
+            %\vspace{-10pt}
+            \includegraphics[width=#1\textwidth]{#3}
+            \caption{#4}
+            \ifthenelse{\isempty{#5}}{}{
+				#5
+			}
+            \label{fig:mrtSimpleSuperComparaison}
+          %\vspace{-15pt}
+       \end{wrapfigure}
 }
 
 
